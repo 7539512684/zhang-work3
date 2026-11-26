@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>晨光阅读会 · Morning Reading Club</title>
+<style>
+    /* 页面整体：背景渐变 + 居中布局（用 text-align 和 inline-block，不用 margin/padding/border） */
+    body {
+        font-family: "Microsoft YaHei", Arial, sans-serif;
+        background: linear-gradient(135deg, #f6ede3, #fdf7f1);
+        color: #3b3025;
+        text-align: center;
+    }
+
+    /* 主内容“卡片”区域：学号末位 0，背景色改为爱马仕橙，其余声明与作业要求一致 */
+    .page {
+        display: inline-block;
+        background-color: #FFA54C;
+        box-shadow: 0 0 30px rgba(80, 58, 35, 0.25);
+        text-align: left;
+        max-width: 720px;
+    }
+
+    /* 群组选择器：统一标题的颜色与字间距 */
+    h1, h2, h3, h4, h5, h6 {
+        color: #5b4636;
+        letter-spacing: 1px;
+    }
+
+    /* 类选择器：居中与右对齐 */
+    .center {
+        text-align: center;
+    }
+
+    .right {
+        text-align: right;
+    }
+
+    /* 只作用在 p 标签、id 为 intro：重要提示强调显示 */
+    p#intro {
+        font-size: 140%;
+        font-weight: bold;
+        color: #c8493b;
+    }
+
+    /* 活动介绍的普通段落：通过行高与字间距来增强视觉舒适度 */
+    .intro-text {
+        line-height: 1.7;
+        letter-spacing: 0.5px;
+    }
+
+    /* 表格所在区域标题 */
+    .section-title {
+        text-align: center;
+    }
+
+    /* 表格基础样式：用背景色和行高区分层次，不用 border/padding/margin */
+    table {
+        width: 100%;
+        background-color: #fdf4e5;
+        font-size: 90%;
+    }
+
+    th {
+        background-color: #f2ddc2;
+        font-weight: bold;
+        text-align: left;
+        line-height: 2.2;
+    }
+
+    td {
+        line-height: 2.0;
+    }
+
+    /* 斑马纹行效果，让表格更易读 */
+    table tr:nth-child(even) {
+        background-color: #fbf0de;
+    }
+
+    /* 鼠标移入整行高亮显示 */
+    table tr:hover {
+        background-color: #eed8be;
+    }
+
+    /* 后代选择器：div 里的 table 里的 a
+       只突出显示报名名单中的名字链接，不影响其他链接 */
+    div table a {
+        font-weight: bold;
+        font-size: 110%;
+        color: #8b3b30;
+    }
+
+    /* 全局链接伪类样式 */
+    a:link {
+        color: #b6553b;
+        text-decoration: none;
+    }
+
+    a:visited {
+        color: #7a7b52;
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: #e36a4c;
+        text-decoration: underline;
+    }
+
+    a:active {
+        color: #3c4f9f;
+        text-decoration: underline;
+    }
+
+    /* 带类名的链接：重点与次要链接（a.red / a.blue 同时满足作业选择器要求） */
+    a.red {
+        font-weight: bold;
+    }
+
+    a.red:link {
+        color: #e25b3d;
+    }
+
+    a.red:active {
+        color: #3046a1;
+    }
+
+    a.blue {
+        font-weight: bold;
+    }
+
+    a.blue:link {
+        color: #4b7f60;
+    }
+
+    a.blue:active {
+        color: #a53aa4;
+    }
+
+    /* 段落首字放大 + 特别颜色，营造杂志风排版感 */
+    p::first-letter {
+        font-size: 180%;
+        color: #c45b3f;
+    }
+
+    /* div 的第一行高亮 */
+    div::first-line {
+        color: #b04832;
+        font-weight: bold;
+    }
+
+    /* 底部公告文字略小，让层次更清晰 */
+    .notice {
+        font-size: 90%;
+        line-height: 1.6;
+    }
+
+    /* 小分隔线：用背景渐变模拟，无 border */
+    .divider {
+        height: 1px;
+        background: linear-gradient(to right, rgba(91,70,54,0), rgba(91,70,54,0.6), rgba(91,70,54,0));
+    }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+    <!-- 顶部标题区 -->
+    <h1 class="center">晨光阅读会 · Morning Reading Club</h1>
+
+    <div class="divider"></div><br>
+
+    <!-- 活动介绍区 -->
+    <div>
+        <h2 id="intro" class="center">本期主题：清晨共读，让一天从书页开始</h2>
+
+        <p class="intro-text right">
+            清晨的阳光落在阅览室的长桌上，空气里还带着一点凉意。我们在这里翻开第一本书，用二十分钟安静阅读，再用几分钟交换彼此划下的句子。晨光阅读会不设门槛，也不比速度，只希望每位成员都能在一天开始之前，留一段只属于自己的时间。
+        </p>
+
+        <p class="intro-text center">
+            本期晨读的主题是“把日子读成一小段光”。从散文到科普，从诗集到人物传记，大家可以带着自己最近在读的书前来，也可以现场从社团书架上挑一本。领读人会先用几分钟介绍作者和背景，随后是自由阅读与分享；如果你只想安静地听，也完全没有问题。
+        </p>
+
+        <p id="intro">
+            重要提示：本次晨读席位有限，报名成功后以短信确认为准，请务必留下可联系的手机号，以便临时调整时间时能及时通知到本人。
+        </p>
+    </div>
+
+    <br><div class="divider"></div><br>
+
+    <!-- 活动报名情况表格区 -->
+    <div>
+        <h3 class="section-title">晨读报名名单</h3>
+
+        <table>
+            <tr>
+                <th>编号</th>
+                <th>姓名</th>
+                <th>联系方式</th>
+                <th>报名状态</th>
+            </tr>
+            <tr>
+                <td>01</td>
+                <td><a href="#notice">马浩然</a></td>
+                <td>138****0001</td>
+                <td>已确认席位</td>
+            </tr>
+            <tr>
+                <td>02</td>
+                <td><a href="#notice">杨阔</a></td>
+                <td>139****0002</td>
+                <td>已确认席位</td>
+            </tr>
+            <tr>
+                <td>03</td>
+                <td><a href="#notice">Emily</a></td>
+                <td>137****0003</td>
+                <td>候选名单</td>
+            </tr>
+        </table>
+    </div>
+
+    <br><div class="divider"></div><br>
+
+    <!-- 页面链接区：这里的链接不会被 div table a 放大字号，因为不在 table 里 -->
+    <div class="center">
+        <p>
+            <a class="red" href="https://hongchenwusdnu.github.io/bookstore/job4.html">查看往期活动照片</a><br>
+            <a class="blue" href="https://7539512684.github.io/piano-club-maked-zhang/zhang-0410-work2.html">在线咨询活动详情</a>
+        </p>
+    </div>
+
+    <br><div class="divider"></div><br>
+
+    <!-- 底部公告区：第一行被 div::first-line 强调 -->
+    <div class="notice" id="notice">
+        晨读地点：图书馆东侧阅览室，靠窗的“晨光座”区域。<br>交通提示：从南门进入后沿林荫路步行约三分钟，门口有社团指示牌。<br>
+        活动时间：工作日 7:00 - 8:00，周末与节假日 8:30 - 10:00。<br>签到方式：活动前十分钟在阅览室门口签到，临时缺席请提前在群内说明。<br>
+        温馨提示：建议自带一本正在读的书和水杯，阅览室内请保持安静。<br>如需咨询，请通过页面上方“在线咨询活动详情”链接与我们联系。
+    </div>
+
+    <br>
+
+</div>
+
+</body>
+</html>
